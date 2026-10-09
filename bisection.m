@@ -14,7 +14,7 @@ b = interval(2);
     for i = 1:maxit
 
         % Midpoint
-        x = (a+b) / 2
+        x = (a+b) / 2;
 
         % Func count at midpoint
         fx = f(x);
@@ -30,7 +30,7 @@ b = interval(2);
         end
 
         % Choose correct half
-        if f(a)*f(x) < 0
+        if fa*fx < 0
             b = x;
         else
             a = x;
