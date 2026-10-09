@@ -43,3 +43,12 @@ fprintf('phi    = %.4f deg\n', rad2deg(phi));
 fprintf('thetaC = %.4f deg\n', rad2deg(thetaC));
 fprintf('thetaD = %.4f deg\n', rad2deg(thetaD));
 fprintf('p4/p1  = %.4f\n', p4p1);
+
+% 2.7 3 initial guesses
+
+guesses = [0 40 35; 0 80 80; 0 40 80; 0 80 35];   % degrees, one row per guess [phi thetaC thetaD]
+
+for k = 1:size(guesses, 1)
+    [xs, info] = newton_sys(f, J, deg2rad(guesses(k,:))', 1e-6, 100);
+    fprintf('guess %d: converged=%d, iters=%d, [phi thetaC thetaD] = %s deg\n', k, info.converged, info.iterations, mat2str(rad2deg(xs(:,end))', 5));
+end
