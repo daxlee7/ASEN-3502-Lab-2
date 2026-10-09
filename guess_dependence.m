@@ -12,7 +12,7 @@ df = @(theta) shock_derivative(delta, theta, M);
 root = zeros(length(theta),1);
 
 for i = 1:length(theta)
-    guess = Newton_Raphson(f, df, [theta(i), deg2rad(90)], atol, maxit);
+    guess = newton_raphson(f, df, [theta(i), deg2rad(90)], atol, maxit);
     if abs(guess - .6592) < 0.01
         root(i) = 1;
     elseif abs(guess - 1.4337) < 0.01

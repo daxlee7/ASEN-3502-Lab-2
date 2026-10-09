@@ -13,10 +13,10 @@ df = @(theta) shock_derivative(delta, theta, M);
 
 [x_bisection_weak, info_bisection_weak] = bisection(f, df, interval_weak, atol, maxit)
 [x_incremental_weak, info_incremental_weak] = incremental_search(f, df, interval_weak, atol, maxit)
-[x_Newton_Raphson_weak, info_Newton_Raphson_weak] = Newton_Raphson(f, df, interval_weak, atol, maxit)
+[x_Newton_Raphson_weak, info_Newton_Raphson_weak] = newton_raphson(f, df, interval_weak, atol, maxit)
 [x_secant_method_weak, info_secant_method_weak] = secant_method(f, df, interval_weak, atol, maxit)
 
 [x_bisection_strong, info_bisection_strong] = bisection(f, df, interval_strong, atol, maxit)
 [x_incremental_strong, info_incremental_strong] = incremental_search(f, df, interval_strong, atol, maxit)
-[x_Newton_Raphson_strong, info_Newton_Raphson_strong] = Newton_Raphson(f, df, interval_strong, atol, maxit)
+[x_newton_raphson_strong, info_newton_raphson_strong] = newton_raphson(f, df, interval_strong, atol, maxit)
 [x_secant_method_strong, info_secant_method_strong] = secant_method(f, df, interval_strong, atol, maxit)
