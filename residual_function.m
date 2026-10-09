@@ -1,7 +1,3 @@
-clc
-clear
-close all
-
 function f = shock_refraction_residual(phi, thetaC, thetaD, M2, M3, deltaA, deltaB, p2p1, p3p1)
 gamma = 1.4; % cp/cv = 1.4
 
@@ -18,6 +14,3 @@ f3 = p2p1*p4_p2 - p3p1*p4p_p3;
 
 f = [f1; f2; f3];
 end
-
-f = @(x) shock_refraction_residual(phi, thetaC, thetaD, M2, M3, deltaA, deltaB, p2p1, p3p1);
-
